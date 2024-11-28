@@ -2,10 +2,10 @@ require('module-alias/register');
 require("dotenv").config()
 const path = require("path")
 const express = require('express');
-const errorHandler = require("@middleware/errorHandler");
-const applyMidleware = require("@middleware/middlewares");
-const applyRouter = require("@router/routers");
 const dbConnection = require("./config/dbConnection");
+const applyMidleware = require('./middleware/middlewares');
+const applyRouter = require('./routers/routers');
+const errorHandler = require('./middleware/errorHandler');
 const app = express();
 
 app.use(express.static(path.join(__dirname,'public')))
