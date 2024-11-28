@@ -1,4 +1,4 @@
-const { sentMail, getAllMail, getMail, updateMail } = require('@controller/mail')
+const { sentMail, getAllMail, getMail, updateMail } = require('../controllers/mail')
 
 const router = require('express').Router()
 

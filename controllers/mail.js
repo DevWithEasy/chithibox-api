@@ -1,4 +1,4 @@
-const Mail = require("@model/mail")
+const Mail = require("../models/mail")
 
 exports.getAllMail=async(req,res,next) =>{
     try {

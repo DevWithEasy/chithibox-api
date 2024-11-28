@@ -1,5 +1,5 @@
-const mailRouter = require('@router/mail')
-const userRouter = require('@router/mail')
+const mailRouter = require('../controllers/user')
+const userRouter = require('../controllers/mail')
 
 const routers = [
     {

@@ -1,4 +1,4 @@
-const { default: User } = require("@model/user")
+const User = require("../models/user")
 
 exports.signin=async(req,res,next) =>{
     try {
