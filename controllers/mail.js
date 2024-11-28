@@ -2,7 +2,7 @@ const Mail = require("../models/mail")
 
 exports.getAllMail=async(req,res,next) =>{
     try {
-        const {id} = req.query
+        const {id} = req.params
         const mails = await Mail.find({user : id})
         console.log(mails)
         return res.status(200).json(mails)
@@ -41,11 +41,11 @@ exports.getMail=async(req,res,next) =>{
 
 exports.updateMail=async(req,res,next) =>{
     try {
-        const {id} = req.query
+        const {id} = req.params
         const mail = await Mail.findByIdAndUpdate(id,{
             seen : true
         },{new : true})
-        return res.status(200).json(mail);
+        return res.status(200).json(mail)
     } catch (error) {
         return res.status(500).json({
             success : false,

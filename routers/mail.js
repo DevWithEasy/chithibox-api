@@ -3,8 +3,8 @@ const { sentMail, getAllMail, getMail, updateMail } = require('../controllers/ma
 const router = require('express').Router()
 
 router.post('/sent/:id',sentMail)
-router.get('/me/mail/:id',getAllMail)
-router.get('/mail/:id',getMail)
-router.put('/mail/:id',updateMail)
+router.get('/me/:id',getAllMail)
+router.get('/:id',getMail)
+router.put('/:id',updateMail)
 
 module.exports = router
