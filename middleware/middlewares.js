@@ -3,11 +3,7 @@ const cors = require('cors')
 const express = require('express')
 
 const middlewares = [
-    // cors({
-    //     origin: '*',
-    //     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    //     credentials: true
-    // }),
+    cors(),
     morgan('dev'),
     express.urlencoded({extended: false}),
     express.json()
