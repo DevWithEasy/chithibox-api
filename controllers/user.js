@@ -89,7 +89,7 @@ exports.signup = async (req, res, next) => {
 exports.me = async (req, res, next) => {
     try {
         const user = await User.findById(req.params.id)
-        const mails = await Mail.find({user : req.params.id})
+        const mails = await Mail.find({user : req.params.id}).sort({createdAt :-1})
         return res.status(200).json({
             user : user,
             mails : mails

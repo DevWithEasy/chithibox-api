@@ -55,7 +55,7 @@ exports.updateMail=async(req,res,next) =>{
 }
 exports.sentMail=async(req,res,next) =>{
     try {
-        const {id} = req.query
+        const {id} = req.params
         const newMail = new Mail({
             ...req.body,
             user : id
