@@ -3,7 +3,7 @@ const { Server } = require('socket.io')
 const socketConnection = (server) => {
     const io = new Server(server, {
         cors: {
-            origin: process.env.NODE_ENV === 'production' ? 'https://chithibox.vercel.app' : 'http://localhost:3000'
+            origin: process.env.NODE_ENV === 'production' ? 'https://chithibox.vercel.app/' : 'http://localhost:3000/'
         }
     })
 

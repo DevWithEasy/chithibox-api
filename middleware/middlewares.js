@@ -1,13 +1,9 @@
 const morgan = require('morgan')
 const cors = require('cors')
 const express = require('express')
-const corsOptions = { 
-    origin: process.env.NODE_ENV === 'production' ? 'https://chithibox.vercel.app' : 'http://localhost:3000', 
-    credentials: true
-}
 
 const middlewares = [
-    cors(corsOptions),
+    cors(),
     morgan('dev'),
     express.urlencoded({extended: false}),
     express.json()
