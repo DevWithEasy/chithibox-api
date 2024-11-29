@@ -4,7 +4,6 @@ exports.getAllMail=async(req,res,next) =>{
     try {
         const {id} = req.params
         const mails = await Mail.find({user : id})
-        console.log(mails)
         return res.status(200).json(mails)
     } catch (error) {
         return res.status(500).json({

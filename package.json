@@ -1,11 +1,8 @@
 {
-  "name": "express-mern-x",
+  "name": "chithibox",
   "version": "1.0.6",
   "description": "",
   "main": "index.js",
-  "bin": {
-    "express-mern-x": "bin/cli.js"
-  },
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
@@ -26,7 +23,8 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.0.3"
+    "mongoose": "^8.0.3",
+    "socket.io": "^4.8.1"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
