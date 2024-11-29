@@ -16,8 +16,7 @@ const routers = [
             res.json({
                 status : 200,
                 success : true,
-                message : 'Server successfully running...',
-                client : process.env.NODE_ENV === 'production' ? 'https://chithibox.vercel.app' : 'http://localhost:3000'
+                message : 'Server successfully running...'
             })
         }
     }

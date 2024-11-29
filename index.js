@@ -18,6 +18,5 @@ errorHandler(app);;
 
 // Start the server
 app.listen(process.env.PORT || 8080, () => {
-    console.log(process.env.NODE_ENV === 'production' ? 'https://chithibox.vercel.app' : 'http://localhost:3000');
     dbConnection();
 });
