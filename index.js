@@ -21,9 +21,15 @@ errorHandler(app)
 
 const io = new Server(server, {
     cors: {
-        origin: process.env.NODE_ENV === 'production' ? 'https://chithibox.vercel.app' : 'http://localhost:3000'
+        origin: [
+            'https://chithibox.vercel.app', 
+            'http://localhost:3000'
+        ],
+        methods: ["GET", "POST"],
+        allowedHeaders: [""],
+        credentials: true 
     }
-})
+});
 
 io.on('connection', (socket) => {
     socket.on('chithibox', id => {
@@ -37,6 +43,12 @@ io.on('connection', (socket) => {
     socket.on('sent', id => {
         socket.to(id).emit('incoming', { id: id })
     })
+})
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "https://chithibox.vercel.app");
+    res.header("Access-Control-Allow-Methods", "GET, POST");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 })
 
 server.listen(process.env.PORT || 8080, () => {
